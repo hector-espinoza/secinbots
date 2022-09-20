@@ -1,0 +1,44 @@
+{% extends './base.html' %}
+{% block content %}
+<h2>Messages List for {{ user.first_name }}</h2>
+{% comment %}
+<a href="{% url 'apptcreate' %}"><button class="btn">Add Appointment</button></a>
+{% endcomment %}
+{{ mymessages }}
+<table id="messagex">
+  <tr>
+    <th>Status</th>
+    <th>From</th>
+    <th>Subject</th>
+    <th>Message</th>
+    <th>Encrypted Message</th>
+    <th>Date/Time</th>
+    <th>Recipient</th>
+  </tr>
+  {% for msg in mymessages|dictsort:'timestamp' %}
+  <tr>
+    <td>
+      {% if msg.status == 'UNREAD' %}
+      New!
+      {% elif msg.status == 'MODIFIED' %}
+      Modified by sender
+      {% elif msg.status == 'DELETED' %}
+      Deleted / Unrecoverable
+      {% else %}
+      Already read
+      {% endif %}
+    </td>
+    <td>{{ msg.sender.first_name }} {{ msg.sender.last_name }} ({{ msg.sender.username }})</td>
+    <td>{{ msg.subject }}</td>
+    <td>{{ msg.text }}</td>
+    <td>{{ msg.etext }}</td>
+    <td>{{ msg.timestamp }}</td>
+    <td>{{ msg.recipient }}</td>
+    {% comment %}
+    <td><a href="{% url 'apptupdate' appt.id%}"><button>Edit</button></a></td>
+    <td><a href="{% url 'apptdelete' appt.id%}"><button>Delete</button></a></td>
+    {% endcomment %}
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

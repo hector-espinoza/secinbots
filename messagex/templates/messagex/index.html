@@ -1,0 +1,18 @@
+{% extends './base.html' %}
+{% block content %}
+
+<div>
+
+    {% if user.is_authenticated %}
+    <a href="{% url 'messagex_list' %}">View Messages ({{mymessages.count}})</a><br>
+    <a href="{% url 'messagex_create' %}">Create Messages</a><br>
+    <a href="{% url 'logout' %}">Logout</a>
+    {% else %}
+    <a href="{% url 'login' %}">Log in</a>
+    <a href="{% url 'signup' %}">Register</a>
+    <a href="{% url 'dbdump' %}">Download DB</a>
+    {% endif %}
+
+</div>
+
+{% endblock %}
