@@ -29,7 +29,7 @@ python -m pip install django
 ```
 django-admin startproject secinbots
 # remove top layer directory, copy paste secinbots manage.py to top secinbots folder
-python manage.py startapp users
+python manage.py startapp messagex
 python manage.py migrate
 ```
 

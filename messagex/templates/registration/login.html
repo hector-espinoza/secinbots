@@ -1,12 +1,16 @@
+
+{% load crispy_forms_tags %}
+{% block content %}
 <div>
 
 <h2>Please login</h2>
 <form class="login" method="post">
     <div>
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form|crispy }}
         <input type="submit" value="Login" />
     </div>
 </form>
 
 </div>
+{% endblock %}
