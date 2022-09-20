@@ -15,7 +15,7 @@
     <th>Date/Time</th>
     <th>Recipient</th>
   </tr>
-  {% for msg in mymessages|dictsort:'timestamp' %}
+  {% for msg in mymessages|dictsort:'time_stamp' %}
   <tr>
     <td>
       {% if msg.status == 'UNREAD' %}
@@ -32,7 +32,7 @@
     <td>{{ msg.subject }}</td>
     <td>{{ msg.text }}</td>
     <td>{{ msg.etext }}</td>
-    <td>{{ msg.timestamp }}</td>
+    <td>{{ msg.time_stamp }}</td>
     <td>{{ msg.recipient }}</td>
     {% comment %}
     <td><a href="{% url 'apptupdate' appt.id%}"><button>Edit</button></a></td>

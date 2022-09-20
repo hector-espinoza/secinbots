@@ -16,11 +16,11 @@ class Messagex(models.Model):
         (MODIFIED, 'Modified'),
         (DELETED, 'Deleted')
     ]
-    subject = models.CharField(max_length=50, default="", verbose_name="Message Subject")
+    subject = models.CharField(max_length=256, default="", verbose_name="Message Subject")
     text = models.CharField(max_length=256, default="", verbose_name="Message Text")
     etext = secured_fields.EncryptedCharField(max_length=256, default="", verbose_name="Encrypted Message Text")
     status = models.CharField(max_length=2, choices=MESSAGE_STATUS, default="UR", verbose_name="Message Status")
-    timestamp = models.DateTimeField(default=now, verbose_name="Message Timestamp")
+    time_stamp = models.DateTimeField(default=now, verbose_name="Message Timestamp")
     sender = models.ForeignKey(
         User, 
         models.SET_NULL,
@@ -39,7 +39,7 @@ class Messagex(models.Model):
         )
     
     def __str__(self):
-        return self.text + " " + str(self.etext) + " " + self.status + " " + str(self.timestamp) + " " + str(self.sender) + " " + str(self.recipient)
+        return self.text + " " + str(self.etext) + " " + self.status + " " + str(self.time_stamp) + " " + str(self.sender) + " " + str(self.recipient)
 
     def get_absolute_url(self):
         return "/messagex/list"
