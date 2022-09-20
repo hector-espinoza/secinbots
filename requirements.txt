@@ -5,3 +5,5 @@ requests
 django-secured-fields
 django-crispy-forms
 whitenoise
+psycopg2-binary
+dj-database-url
