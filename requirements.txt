@@ -1,5 +1,5 @@
 django>=4.0, <5.0
 gunicorn
 django-heroku
-#requests
-secured_fields
+requests
+#secured_fields
