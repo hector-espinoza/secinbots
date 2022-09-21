@@ -83,3 +83,4 @@ Type "help", "copyright", "credits" or "license" for more information.
 - protect views from direct access
 - export database tables
 - python3 manage.py check --deploy
+- heroku run bash --remote origin
