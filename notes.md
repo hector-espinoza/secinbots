@@ -75,6 +75,10 @@ Type "help", "copyright", "credits" or "license" for more information.
 ```
 
 ## TO-DOs
+- remove debug setting on prod
+- create fancy error page
+- remove testing data from prod
+- edit profile (or better ask for this on registration, at least Name, Lastname and valid email)
 - move secrets to env vars:
     - https://www.digitalocean.com/community/tutorials/how-to-harden-your-production-django-project#step-3-creating-development-and-production-settings
 - encrypt database data
@@ -83,4 +87,5 @@ Type "help", "copyright", "credits" or "license" for more information.
 - protect views from direct access
 - export database tables
 - python3 manage.py check --deploy
-- heroku run bash --remote origin
+- heroku run bash --remote origin (use this to update remote database by using python3 manage.py makemigrations then migrate)
+- heroku addons:create papertrail
