@@ -8,8 +8,6 @@ urlpatterns = [
     path("logout/", views.logmeout, name="logout"),
     path("signup/", views.SignUp.as_view(), name="signup"),
     path("messagex/list", views.getmymessages, name="messagex_list"),
-    #path("dbdump/", views.downloaddb, name="dbdump"),
-    #path("dbdump/", views.downloadmessages, name="dbdump"),
     path("dbdump/", views.downloaddb, name="dbdump"),
     path("messagex/create", views.MessagexCreate.as_view(), name="messagex_create"),
 ]

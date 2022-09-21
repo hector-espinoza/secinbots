@@ -6,25 +6,10 @@ import secured_fields
 # Create your models here.
 
 class Messagex(models.Model):
-    UNREAD = 'UR'
-    READ = 'RD'
-    MODIFIED = 'MD'
-    DELETED = 'DL'
-    MESSAGE_STATUS = [
-        (UNREAD, 'Unread'),
-        (READ, 'Read'),
-        (MODIFIED, 'Modified'),
-        (DELETED, 'Deleted')
-    ]
-    subject = models.CharField(max_length=256, default="", verbose_name="Message Subject")
-    text = models.CharField(max_length=256, default="", verbose_name="Message Text")
-    etext = secured_fields.EncryptedCharField(max_length=256, default="", verbose_name="Encrypted Message Text")
-    status = models.CharField(max_length=2, choices=MESSAGE_STATUS, default="UR", verbose_name="Message Status")
-    time_stamp = models.DateTimeField(default=now, verbose_name="Message Timestamp")
     sender = models.ForeignKey(
         User, 
         models.SET_NULL,
-        verbose_name="Message Sender",
+        verbose_name="Sender:",
         related_name="sender",
         blank=True,
         null=True,
@@ -32,14 +17,18 @@ class Messagex(models.Model):
     recipient = models.ForeignKey(
         User, 
         models.SET_NULL,
-        verbose_name="Message Recipient",
+        verbose_name="Recipient:",
         related_name="recipient",
-        blank=True,
+        blank=False,
         null=True,
         )
+    subject = secured_fields.EncryptedCharField(max_length=256, default="", verbose_name="Subject:")
+    text = secured_fields.EncryptedCharField(max_length=256, default="", verbose_name="Message:")
+    time_stamp = secured_fields.EncryptedDateTimeField(default=now, verbose_name="Timestamp:")
+
     
     def __str__(self):
-        return self.text + " " + str(self.etext) + " " + self.status + " " + str(self.time_stamp) + " " + str(self.sender) + " " + str(self.recipient)
+        return self.subject + " " + self.text + " " + str(self.time_stamp) + " " + str(self.sender) + " " + str(self.recipient)
 
     def get_absolute_url(self):
         return "/messagex/list"

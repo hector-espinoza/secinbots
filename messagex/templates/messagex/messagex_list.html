@@ -3,35 +3,21 @@
 <h2>Messages List for {{ user.first_name }}</h2>
 {% comment %}
 <a href="{% url 'apptcreate' %}"><button class="btn">Add Appointment</button></a>
-{% endcomment %}
 {{ mymessages }}
+{% endcomment %}
 <table id="messagex">
   <tr>
-    <th>Status</th>
     <th>From</th>
     <th>Subject</th>
     <th>Message</th>
-    <th>Encrypted Message</th>
     <th>Date/Time</th>
     <th>Recipient</th>
   </tr>
   {% for msg in mymessages|dictsort:'time_stamp' %}
   <tr>
-    <td>
-      {% if msg.status == 'UNREAD' %}
-      New!
-      {% elif msg.status == 'MODIFIED' %}
-      Modified by sender
-      {% elif msg.status == 'DELETED' %}
-      Deleted / Unrecoverable
-      {% else %}
-      Already read
-      {% endif %}
-    </td>
     <td>{{ msg.sender.first_name }} {{ msg.sender.last_name }} ({{ msg.sender.username }})</td>
     <td>{{ msg.subject }}</td>
     <td>{{ msg.text }}</td>
-    <td>{{ msg.etext }}</td>
     <td>{{ msg.time_stamp }}</td>
     <td>{{ msg.recipient }}</td>
     {% comment %}
