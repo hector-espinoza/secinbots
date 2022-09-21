@@ -16,7 +16,7 @@ dotenv.load_dotenv(
     os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env')
 )
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'secinbots.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'secinbots.settings.development')
 
 if os.getenv('DJANGO_SETTINGS_MODULE'):
     os.environ['DJANGO_SETTINGS_MODULE'] = os.getenv('DJANGO_SETTINGS_MODULE')
