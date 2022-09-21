@@ -1,8 +1,9 @@
 venv
 *.pyc
-staticfiles
 .env
 db.sqlite3
 dbdump.sql
 update.sh
 secinbots/*
+staticfiles
+static
