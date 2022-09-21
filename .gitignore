@@ -4,5 +4,3 @@ venv
 db.sqlite3
 dbdump.sql
 update.sh
-staticfiles
-static
