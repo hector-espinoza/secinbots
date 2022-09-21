@@ -82,3 +82,4 @@ Type "help", "copyright", "credits" or "license" for more information.
     - https://django-cryptography.readthedocs.io/en/latest/settings.html
 - protect views from direct access
 - export database tables
+- python3 manage.py check --deploy
