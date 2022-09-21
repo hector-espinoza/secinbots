@@ -7,4 +7,4 @@ django-crispy-forms
 whitenoise
 psycopg2-binary
 dj-database-url
-dotenv
+python-dotenv
