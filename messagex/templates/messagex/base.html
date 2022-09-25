@@ -72,12 +72,7 @@
         <h1>Secure Inbots</h1>
     </a>
     
-    <h3>Welcome to Secure Inbots 
-        {% if user.is_authenticated %} 
-        {{ user.first_name }} 
-        {% else %} Guest
-        {% endif %}!
-    </h3>
+    <h2>Welcome to Secure Inbots <a href="#">{{ user.username|default:'guest' }}</a>!</h2>
     
     {% block content %}
     {% endblock %}

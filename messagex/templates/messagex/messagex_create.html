@@ -2,9 +2,12 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
+<h3>Create Message</h3>
 <form action="" method="POST">
   {% csrf_token %}
   {{ form|crispy }}
   <input type="submit" />
 </form>
+<br>
+<a href="{% url 'index' %}">Back to Dashboard</a>
 {% endblock %}

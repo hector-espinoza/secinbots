@@ -1,8 +1,9 @@
+{% extends '../messagex/base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
 <div>
 
-<h2>Sign Up</h2>
+<h3>Sign Up</h3>
 <form class="signup" method="POST">
     <div>
         {% csrf_token %}
@@ -10,6 +11,6 @@
         <input type="submit" value="Signup" />
     </div>
 </form>
-
+<a href="{% url 'login' %}">Back to Login</a><br>
 </div>
 {% endblock %}

@@ -1,10 +1,6 @@
 {% extends './base.html' %}
 {% block content %}
-<h2>Messages List for {{ user.first_name }}</h2>
-{% comment %}
-<a href="{% url 'apptcreate' %}"><button class="btn">Add Appointment</button></a>
-{{ mymessages }}
-{% endcomment %}
+<h3>Message List</h3>
 <table id="messagex">
   <tr>
     <th>From</th>
@@ -15,7 +11,7 @@
   </tr>
   {% for msg in mymessages|dictsort:'time_stamp' %}
   <tr>
-    <td>{{ msg.sender.first_name }} {{ msg.sender.last_name }} ({{ msg.sender.username }})</td>
+    <td>{{ msg.sender }}</td>
     <td>{{ msg.subject }}</td>
     <td>{{ msg.text }}</td>
     <td>{{ msg.time_stamp }}</td>
@@ -27,4 +23,6 @@
   </tr>
   {% endfor %}
 </table>
+<br>
+<a href="{% url 'index' %}">Back to Dashboard</a>
 {% endblock %}

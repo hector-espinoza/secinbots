@@ -4,12 +4,17 @@
 <div>
 
     {% if user.is_authenticated %}
+    <h3>My Account</h3>
+    <a href="{% url 'password_change' %}">Change Password</a><br>
+    <a href="{% url 'logout' %}">Logout</a><br>
+    <br>
+    <h3>My Messages</h3>
     <a href="{% url 'messagex_list' %}">View Messages ({{mymessages.count}})</a><br>
     <a href="{% url 'messagex_create' %}">Create Messages</a><br>
-    <a href="{% url 'logout' %}">Logout</a>
     {% else %}
-    <a href="{% url 'login' %}">Log in</a>
-    <a href="{% url 'signup' %}">Register</a>
+    <h3>Dashboard</h3>
+    <a href="{% url 'login' %}">Log in</a><br>
+    <a href="{% url 'signup' %}">Register</a><br>
     <a href="{% url 'dbdump' %}">Download DB</a>
     {% endif %}
 
