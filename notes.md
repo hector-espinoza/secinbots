@@ -89,3 +89,4 @@ Type "help", "copyright", "credits" or "license" for more information.
 - python3 manage.py check --deploy
 - heroku run bash --remote origin (use this to update remote database by using python3 manage.py makemigrations then migrate)
 - heroku addons:create papertrail
+- python -m smtpd -n -c DebuggingServer localhost:1025
