@@ -1,21 +1,19 @@
 {% extends './base.html' %}
 {% block content %}
-<h3>Message List</h3>
+<h3>Sent</h3>
 <table id="messagex">
   <tr>
-    <th>From</th>
+    <th>To</th>
     <th>Subject</th>
     <th>Message</th>
     <th>Date/Time</th>
-    <th>Recipient</th>
   </tr>
-  {% for msg in mymessages|dictsort:'time_stamp' %}
+  {% for msg in mymessages|dictsortreversed:'time_stamp' %}
   <tr>
-    <td>{{ msg.sender }}</td>
+    <td>{{ msg.recipient }}</td>
     <td>{{ msg.subject }}</td>
     <td>{{ msg.text }}</td>
     <td>{{ msg.time_stamp }}</td>
-    <td>{{ msg.recipient }}</td>
     {% comment %}
     <td><a href="{% url 'apptupdate' appt.id%}"><button>Edit</button></a></td>
     <td><a href="{% url 'apptdelete' appt.id%}"><button>Delete</button></a></td>

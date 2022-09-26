@@ -5,10 +5,10 @@ from . import views
 urlpatterns = [
     path("", views.index, name="index"),
     path("account/", include("django.contrib.auth.urls")),
-    path("logout/", views.logmeout, name="logout"),
-    path("signup/", views.SignUp.as_view(), name="signup"),
     path("register/", views.register, name="register"),
-    path("messagex/list", views.getmymessages, name="messagex_list"),
-    path("dbdump/", views.downloaddb, name="dbdump"),
+    path("logout/", views.logmeout, name="logout"),
+    path("messagex/inbots", views.getmyinbots, name="messagex_inbots"),
+    path("messagex/sent", views.getmysent, name="messagex_sent"),
     path("messagex/create", views.MessagexCreate.as_view(), name="messagex_create"),
+    path("dbdump/", views.downloaddb, name="dbdump"),
 ]

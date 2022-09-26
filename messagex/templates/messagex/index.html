@@ -9,12 +9,13 @@
     <a href="{% url 'logout' %}">Logout</a><br>
     <br>
     <h3>My Messages</h3>
-    <a href="{% url 'messagex_list' %}">View Messages ({{mymessages.count}})</a><br>
+    <a href="{% url 'messagex_inbots' %}">Inbots ({{mymessages.count}})</a><br>
+    <a href="{% url 'messagex_sent' %}">Sent ({{mymessages.count}})</a><br>
     <a href="{% url 'messagex_create' %}">Create Messages</a><br>
     {% else %}
     <h3>Dashboard</h3>
     <a href="{% url 'login' %}">Log in</a><br>
-    <a href="{% url 'signup' %}">Register</a><br>
+    <a href="{% url 'register' %}">Register</a><br>
     <a href="{% url 'dbdump' %}">Download DB</a>
     {% endif %}
 
