@@ -31,4 +31,4 @@ class Messagex(models.Model):
         return self.subject + " " + self.text + " " + str(self.time_stamp) + " " + str(self.sender) + " " + str(self.recipient)
 
     def get_absolute_url(self):
-        return "/messagex/list"
+        return "/messagex/sent"
