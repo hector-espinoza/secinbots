@@ -11,7 +11,7 @@
     <h3>My Messages</h3>
     <a href="{% url 'messagex_inbots' %}">Inbots ({{mymessages.count}})</a><br>
     <a href="{% url 'messagex_sent' %}">Sent ({{mymessages.count}})</a><br>
-    <a href="{% url 'messagex_create' %}">Create Messages</a><br>
+    <a href="{% url 'messagex_create' %}">Create Message</a><br>
     {% else %}
     <h3>Dashboard</h3>
     <a href="{% url 'login' %}">Log in</a><br>
