@@ -14,7 +14,7 @@
           </tr>
           {% for msg in mymessages|dictsortreversed:'time_stamp' %}
           <tr>
-            <td>{{ msg.sender }}</td>
+            <td style="width:20%">{{ msg.sender }}</td>
             <td>{{ msg.subject }} / <small class="text-muted">{{ msg.text }}</small></td>
             <td style="width:20%">{{ msg.time_stamp }}</td>
             {% comment %}
