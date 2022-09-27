@@ -10,7 +10,7 @@ class MessagexCreate(forms.ModelForm):
 
     def clean_subject(self):
         data = self.cleaned_data['subject']
-        data += 'haha! '
+        data += ''
         return data
 
 class CustomUserForm(UserCreationForm):
