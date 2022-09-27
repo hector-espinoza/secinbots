@@ -4,11 +4,9 @@
 <h3>Sign Up</h3>
 <div>
 <form class="signup" method="POST">
-    <div>
-        {% csrf_token %}
-        {{ form|crispy }}
-        <input type="submit" value="Signup" />
-    </div>
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit" class="btn btn-primary" value="Signup">
 </form>
 {% if messages %}
 <ul class="messages">

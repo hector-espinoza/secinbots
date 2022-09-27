@@ -6,7 +6,7 @@
 <form action="" method="POST">
   {% csrf_token %}
   {{ form|crispy }}
-  <input type="submit" />
+  <input type="submit" class="btn btn-primary" value="Send">
 </form>
 <br>
 <a href="{% url 'index' %}">Back to Dashboard</a>

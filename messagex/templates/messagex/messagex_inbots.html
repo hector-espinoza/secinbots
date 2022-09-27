@@ -1,18 +1,17 @@
 {% extends './base.html' %}
 {% block content %}
+{% load crispy_forms_tags %}
 <h3>Inbots</h3>
-<table id="messagex">
-  <tr>
+<table id="messagex" class="table table-hover table-striped table-sm table-bordered">
+  <tr class="table-primary">
     <th>From</th>
-    <th>Subject</th>
-    <th>Message</th>
-    <th>Date/Time</th>
+    <th>Subject / Message</th>
+    <th>Date / Time</th>
   </tr>
   {% for msg in mymessages|dictsortreversed:'time_stamp' %}
   <tr>
     <td>{{ msg.sender }}</td>
-    <td>{{ msg.subject }}</td>
-    <td>{{ msg.text }}</td>
+    <td>{{ msg.subject }} / <small class="text-muted">{{ msg.text }}</small></td>
     <td>{{ msg.time_stamp }}</td>
     {% comment %}
     <td><a href="{% url 'apptupdate' appt.id%}"><button>Edit</button></a></td>
