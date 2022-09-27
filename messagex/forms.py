@@ -16,7 +16,7 @@ class MessagexCreate(forms.ModelForm):
 class CustomUserForm(UserCreationForm):
     email = forms.EmailField(
         required=True, 
-        max_length=256, 
+        max_length=150, 
         label="Username:", 
         help_text="Enter a valid email address. You'll need it for password recovery."
         )

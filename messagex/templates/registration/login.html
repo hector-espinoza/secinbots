@@ -2,15 +2,22 @@
 {% extends '../messagex/base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-<h3>Log In</h3>
-{{ form.non_field_errors }}
 
-<form class="login" method="post">
-    {% csrf_token %}
-    {{ form|crispy }}
-    <input type="submit" value="Login" class="btn btn-primary">
-    <button type="button" class="btn btn-secondary" onclick="location.href=`{% url 'password_reset' %}`">Forgot Password</button>
-</form>
+<div>
+    <div class="card">
+        <h5 class="card-header">Login</h5>
+        <div class="card-body">
+            <form class="login" method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <input type="submit" value="Login" class="btn btn-primary">
+                <button type="button" class="btn btn-secondary" onclick="location.href=`{% url 'password_reset' %}`">Forgot Password</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
 <br>
 
 <a href="{% url 'index' %}">Back to Index</a>

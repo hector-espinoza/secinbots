@@ -2,23 +2,27 @@
 {% block content %}
 
 <div>
-
-    {% if user.is_authenticated %}
-    <h3>My Account</h3>
-    <a href="{% url 'password_change' %}">Change Password</a><br>
-    <a href="{% url 'logout' %}">Logout</a><br>
-    <br>
-    <h3>My Messages</h3>
-    <a href="{% url 'messagex_inbots' %}">Inbots ({{mymessages.count}})</a><br>
-    <a href="{% url 'messagex_sent' %}">Sent ({{mymessages.count}})</a><br>
-    <a href="{% url 'messagex_create' %}">Create Message</a><br>
-    {% else %}
-    <h3>Dashboard</h3>
-    <a href="{% url 'login' %}">Log in</a><br>
-    <a href="{% url 'register' %}">Register</a><br>
-    <a href="{% url 'dbdump' %}">Download DB</a>
-    {% endif %}
-
+    <div class="card">
+        {% if user.is_authenticated %}
+        <h5 class="card-header">My Dashboard</h5>
+        <div class="card-body">
+          <h5 class="card-title">My Account</h5>
+          <a href="{% url 'password_change' %}">Change Password</a><br>
+          <a href="{% url 'logout' %}">Logout</a><br><br>
+          <h5 class="card-title">My Messages</h5>
+          <a href="{% url 'messagex_inbots' %}">Inbots ({{mymessages.count}})</a><br>
+          <a href="{% url 'messagex_sent' %}">Sent ({{mymessages.count}})</a><br>
+          <a href="{% url 'messagex_create' %}">Create Message</a><br>
+        </div>
+        {% else %}
+        <h5 class="card-header">Index</h5>
+        <div class="card-body">
+          <a href="{% url 'login' %}">Log in</a><br>
+          <a href="{% url 'register' %}">Register</a><br>
+          <a href="{% url 'dbdump' %}">Download DB</a>
+        </div>
+        {% endif %}
+    </div>
 </div>
 
 {% endblock %}

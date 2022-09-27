@@ -1,20 +1,25 @@
 {% extends '../messagex/base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-<h3>Sign Up</h3>
+
 <div>
-<form class="signup" method="POST">
-    {% csrf_token %}
-    {{ form|crispy }}
-    <input type="submit" class="btn btn-primary" value="Signup">
-</form>
-{% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-    {% endfor %}
-</ul>
-{% endif %}
+    <div class="card">
+        <h5 class="card-header">Register</h5>
+        <div class="card-body">
+            <form class="signup" method="POST">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <input type="submit" class="btn btn-primary" value="Signup">
+            </form>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    </div>
 <br>
 <a href="{% url 'login' %}">Back to Login</a><br>
 </div>

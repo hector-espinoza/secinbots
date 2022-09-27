@@ -22,7 +22,7 @@ class Messagex(models.Model):
         blank=False,
         null=True,
         )
-    subject = secured_fields.EncryptedCharField(max_length=256, default="", verbose_name="Subject:")
+    subject = secured_fields.EncryptedCharField(max_length=100, default="", verbose_name="Subject:")
     text = secured_fields.EncryptedTextField(max_length=512, default="", verbose_name="Message:")
     time_stamp = secured_fields.EncryptedDateTimeField(default=now, verbose_name="Timestamp:")
 

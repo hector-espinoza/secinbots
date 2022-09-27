@@ -1,24 +1,31 @@
 {% extends './base.html' %}
 {% block content %}
-<h3>Inbots</h3>
-<table id="messagex" class="table table-hover table-striped table-sm table-bordered">
-  <tr class="table-primary">
-    <th>From</th>
-    <th>Subject / Message</th>
-    <th>Date / Time</th>
-  </tr>
-  {% for msg in mymessages|dictsortreversed:'time_stamp' %}
-  <tr>
-    <td>{{ msg.sender }}</td>
-    <td>{{ msg.subject }} / <small class="text-muted">{{ msg.text }}</small></td>
-    <td>{{ msg.time_stamp }}</td>
-    {% comment %}
-    <td><a href="{% url 'apptupdate' appt.id%}"><button>Edit</button></a></td>
-    <td><a href="{% url 'apptdelete' appt.id%}"><button>Delete</button></a></td>
-    {% endcomment %}
-  </tr>
-  {% endfor %}
-</table>
+
+<div>
+  <div class="card">
+      <h5 class="card-header">My Messages</h5>
+      <div class="card-body">
+        <h5 class="card-title">Inbots</h5>
+        <table id="messagex" class="table table-hover table-striped table-sm table-bordered table-responsive-lg">
+          <tr class="table-primary">
+            <th>From</th>
+            <th>Subject / Message</th>
+            <th>Date / Time</th>
+          </tr>
+          {% for msg in mymessages|dictsortreversed:'time_stamp' %}
+          <tr>
+            <td>{{ msg.sender }}</td>
+            <td>{{ msg.subject }} / <small class="text-muted">{{ msg.text }}</small></td>
+            <td style="width:20%">{{ msg.time_stamp }}</td>
+            {% comment %}
+            <td><a href="{% url 'apptupdate' appt.id%}"><button>Edit</button></a></td>
+            <td><a href="{% url 'apptdelete' appt.id%}"><button>Delete</button></a></td>
+            {% endcomment %}
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+  </div>
 <br>
 <a href="{% url 'index' %}">Back to Dashboard</a>
 {% endblock %}
