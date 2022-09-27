@@ -1,0 +1,21 @@
+{% extends './base.html' %}
+{% block content %}
+{% load crispy_forms_tags %} 
+{% load static %}
+
+<div>
+    <div class="card">
+        <h5 class="card-header">My Dashboard</h5>
+        <div class="card-body">
+          <h5 class="card-title">My Account</h5>
+          <a href="{% url 'password_change' %}">Change Password</a><br>
+          <a href="{% url 'logout' %}">Logout</a><br><br>
+          <h5 class="card-title">My Messages</h5>
+          <a href="{% url 'messagex_inbots' %}">Inbots ({{myreceived.count}})</a><br>
+          <a href="{% url 'messagex_sent' %}">Sent ({{mysent.count}})</a><br>
+          <a href="{% url 'messagex_create' %}">Create Message</a><br>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
