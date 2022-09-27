@@ -28,6 +28,7 @@ class CustomUserForm(UserCreationForm):
     def clean_email(self):
         if User.objects.filter(email=self.cleaned_data['email']).exists():
             raise forms.ValidationError("This Email has been used before, go to 'Forgot Password' to recover your account.")
+        return self.cleaned_data['email']
 
     def save(self, commit=True):
         user = User.objects.create_user(
