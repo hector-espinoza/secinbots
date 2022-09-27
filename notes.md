@@ -74,6 +74,14 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> exit()
 ```
 
+## Useful commands
+```
+- python3 manage.py check --deploy
+- heroku run bash --remote origin (use this to update remote database by using python3 manage.py makemigrations then migrate)
+- heroku addons:create papertrail
+- python -m smtpd -n -c DebuggingServer localhost:1025
+```
+
 ## TO-DOs
 - remove debug setting on prod
 - create fancy error page
@@ -81,12 +89,6 @@ Type "help", "copyright", "credits" or "license" for more information.
 - edit profile (or better ask for this on registration, at least Name, Lastname and valid email)
 - move secrets to env vars:
     - https://www.digitalocean.com/community/tutorials/how-to-harden-your-production-django-project#step-3-creating-development-and-production-settings
-- encrypt database data
 - make it robust:
     - https://django-cryptography.readthedocs.io/en/latest/settings.html
 - protect views from direct access
-- export database tables
-- python3 manage.py check --deploy
-- heroku run bash --remote origin (use this to update remote database by using python3 manage.py makemigrations then migrate)
-- heroku addons:create papertrail
-- python -m smtpd -n -c DebuggingServer localhost:1025
