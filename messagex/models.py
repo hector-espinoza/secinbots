@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.utils.timezone import now
+from django.utils import timezone
 import secured_fields
 
 # Create your models here.
@@ -24,8 +24,7 @@ class Messagex(models.Model):
         )
     subject = secured_fields.EncryptedCharField(max_length=100, default="", verbose_name="Subject:")
     text = secured_fields.EncryptedTextField(max_length=512, default="", verbose_name="Message:")
-    time_stamp = secured_fields.EncryptedDateTimeField(default=now, verbose_name="Timestamp:")
-
+    time_stamp = secured_fields.EncryptedDateTimeField(default=timezone.now, verbose_name="Timestamp:")
     
     def __str__(self):
         return self.subject + " " + self.text + " " + str(self.time_stamp) + " " + str(self.sender) + " " + str(self.recipient)

@@ -24,7 +24,7 @@
               <ul class="navbar-nav mr-auto">
               </ul>
               <span class="navbar-text">
-                {{ user.username|default:'' }}
+                {{ user.username|default:'' }} {% now 'N j, Y' %}
               </span>
             </div>
           </nav>
