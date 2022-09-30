@@ -13,9 +13,9 @@
           </tr>
           {% for msg in mymessages|dictsortreversed:'time_stamp' %}
           <tr>
-            <td style="width:20%">{{ msg.recipient }}</td>
+            <td>{{ msg.recipient }}</td>
             <td>{{ msg.subject }} / <small class="text-muted">{{ msg.text }}</small></td>
-            <td style="width:20%">{{ msg.time_stamp }}</td>
+            <td>{{ msg.time_stamp }}</td>
             {% comment %}
             <td><a href="{% url 'apptupdate' appt.id%}"><button>Edit</button></a></td>
             <td><a href="{% url 'apptdelete' appt.id%}"><button>Delete</button></a></td>
