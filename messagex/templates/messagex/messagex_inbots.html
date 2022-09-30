@@ -17,7 +17,7 @@
             <td>
               {% now "Y-m-d" as todays_date %}
               {% if todays_date <=  msg.time_stamp|date:"Y-m-d" %}
-                <span class="badge badge-primary">New!</span><br>
+                <span class="badge badge-primary">New!</span> - 
               {% endif %}
               {{ msg.sender }}
             </td>
