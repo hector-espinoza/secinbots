@@ -15,11 +15,11 @@
           {% for msg in mymessages|dictsortreversed:'time_stamp' %}
           <tr>
             <td>
-              {{ msg.sender }}<br>
               {% now "Y-m-d" as todays_date %}
               {% if todays_date <=  msg.time_stamp|date:"Y-m-d" %}
-                <span class="badge badge-primary">New!</span>
+                <span class="badge badge-primary">New!</span><br>
               {% endif %}
+              {{ msg.sender }}
             </td>
             <td>{{ msg.subject }} / <small class="text-muted">{{ msg.text }}</small></td>
             <td>{{ msg.time_stamp.date }}</td>

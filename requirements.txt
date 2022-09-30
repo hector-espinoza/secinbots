@@ -10,3 +10,4 @@ psycopg2-binary
 dj-database-url
 xkcdpass
 django-csp
+django-cors-headers
