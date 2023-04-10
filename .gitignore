@@ -3,4 +3,5 @@ venv
 .env
 db.sqlite3
 dbdump.sql
+full-notes.md
 update.sh
