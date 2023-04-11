@@ -10,7 +10,7 @@ https://secinbots.herokuapp.com/index.html
 https://github.com/hector-espinoza/secinbots.git
 ```
 
-## Local setup
+## Local set up
 ```
 gh repo clone hector-espinoza/secinbots
 cd secinbots
