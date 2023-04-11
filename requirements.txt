@@ -4,7 +4,7 @@ django-heroku
 requests
 django-secured-fields
 django-crispy-forms
-crispy_bootstrap5
+crispy_bootstrap4
 whitenoise
 psycopg2-binary
 dj-database-url
