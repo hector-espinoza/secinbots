@@ -106,7 +106,6 @@ def register(request):
       form = CustomUserForm(request.POST)
       if form.is_valid():
         user = form.save()
-        #user.is_active = False
         user.save()
         return redirect('login')
     context = {

@@ -4,3 +4,4 @@ venv
 dbdump.sql
 full-notes.md
 update.sh
+bfg-1.14.0.jar
