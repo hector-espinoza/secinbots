@@ -1,6 +1,7 @@
 venv
 *.pyc
 .env
+.DS_Store
 dbdump.sql
 full-notes.md
 update.sh
