@@ -18,6 +18,7 @@ python3 manage.py runserver # runs django server locally
 ```
 
 ## Notes
+I strongly recommend using the Live App for testing and convenience, IF you still want to give it a try locally please take the following considerations:
 1. You'll need [Postgress sever](https://www.postgresql.org/download/) running locally with a DB called `secinbots.v1`
 2. You'll need SMTP server running locally. In a new terminal run `python -m smtpd -n -c DebuggingServer localhost:1025`
 3. This project differenciate between Dev from Prod configs, check settings.py for local (Dev) ENV configs
